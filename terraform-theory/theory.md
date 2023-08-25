@@ -10,13 +10,17 @@ Terraform variables are a way to store values that can be reused throughout your
 They allow you to define a value once and reference it in multiple places throughout your configuration, making it easier to manage and update your infrastructure.
 
 1. variables are defined in the variable block in the configuration file or in the seperate file like variable.tf
+   
         variable "<your_variable_name>" {
           type = ""         #-------->type of the variable
           description = ""  #-------->description for it
           default = ""      #-------->default value which u want to pass
         }
+
 2. Variables can be accessed in Terraform configuration files using the var function
+   
         var.<your_variable_name>
+
 3. Variables can have different types like string, boolean, number, list...ect
     
 
@@ -30,7 +34,6 @@ simple values : These are the variables which holds only single values
 3. boolean--------ex: true/false
    
 Collection variables: These are the variables which holds more than one value
-
 1. list ----------ex: ["user1","user2","user3"]
 2. set 
 3. map
@@ -58,6 +61,7 @@ when we are working with collection variables like list,set and map we come acro
 count,for each, for
 
 count : it is used to create n no. of resources like ec2's,IAM users..etc
+
 ex:
         variable "user_names" {
         description = "IAM usernames"
@@ -70,7 +74,6 @@ ex:
         }
 
 for_each: it is also used to create n no. of resources but it works with set variable type
---------
 
 ex:
         variable "user_names" {
