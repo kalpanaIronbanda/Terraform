@@ -1,0 +1,10 @@
+terrafom init
+terrafom plan
+terraform apply
+terraform destroy
+
+How do you pass a variable(.tfvars) to the command line?
+terraform init --var-file=<*.tfvars>
+terraform plan --var-file=<*.tfvars>
+terraform apply --var-file=<*.tfvars>
+How do you pass variables 
