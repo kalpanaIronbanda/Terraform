@@ -10,14 +10,13 @@ Terraform variables are a way to store values that can be reused throughout your
 They allow you to define a value once and reference it in multiple places throughout your configuration, making it easier to manage and update your infrastructure.
 
 1. variables are defined in the variable block in the configuration file or in the seperate file like variable.tf
-    variable "<your_variable_name>" {
-      type = ""         #-------->type of the variable
-      description = ""  #-------->description for it
-      default = ""      #-------->default value which u want to pass
-    }
+        variable "<your_variable_name>" {
+          type = ""         #-------->type of the variable
+          description = ""  #-------->description for it
+          default = ""      #-------->default value which u want to pass
+        }
 2. Variables can be accessed in Terraform configuration files using the var function
-    #ex:
-    atribute = var.<your_variable_name>
+        var.<your_variable_name>
 3. Variables can have different types like string, boolean, number, list...ect
     
 
