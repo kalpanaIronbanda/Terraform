@@ -1,10 +1,42 @@
-terrafom init
-terrafom plan
+terraform init
+terraform plan
 terraform apply
 terraform destroy
 
 How do you pass a variable(.tfvars) to the command line?
-terraform init --var-file=<*.tfvars>
-terraform plan --var-file=<*.tfvars>
-terraform apply --var-file=<*.tfvars>
-How do you pass variables 
+        terraform init --var-file=<*.tfvars>
+        terraform plan --var-file=<*.tfvars>
+        terraform apply --var-file=<*.tfvars>
+
+
+How do you pass variable from command line
+        terraform plan -var="<variable name> = <value of the variable>"
+ex: terraform plan -var="instance_type = t2.micro"
+
+how to delete a perticular resource?
+1.terraform destroy --target=<resoucename.logicname>
+or manually edit the configuration file and the re-apply
+or remove from state file with the following command and then re-apply
+        terraform state rm "<resoucename.logicname>"
+
+If we store the .tfstate remotely we can use the following commands to read the file
+To read the total content of the .tfstate file
+        terraform state pull
+
+To get the list of added resources
+        terraform state list
+
+terraform import:
+In Terraform, you need to import an existing resource into your Terraform configuration so that you can manage it with Terraform. "terraform import" command is useful when you have an existing resource that you did not create with Terraform, but you want to manage its lifecycle with Terraform.
+syntax: 
+                terraform import <resource_type>.<logical_name> <id/name>
+
+
+Terraform refresh:
+Terraform refresh command doesn't do any changes or modifications to the configuration but it takes the latest changes of remote object and updates it in the .tfstate file
+
+                terrform refresh
+
+
+
+
