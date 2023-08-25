@@ -5,9 +5,39 @@ With the help of terraform we can provision infrastructure on Cloud like AWS,Azu
 
 Terraform Variables:
 --------------------
-Terraform variables are meant for passing external input values to the configuration file
-Variable.tf: this file is used for defining and declaring the variables for the configuration of terraform
+Terraform variables are a way to store values that can be reused throughout your Terraform configuration.
 
+They allow you to define a value once and reference it in multiple places throughout your configuration, making it easier to manage and update your infrastructure.
+
+1. variables are defined in the variable block in the configuration file or in the seperate file like variable.tf
+    variable "<your_variable_name>" {
+      type = ""         #-------->type of the variable
+      description = ""  #-------->description for it
+      default = ""      #-------->default value which u want to pass
+    }
+2. Variables can be accessed in Terraform configuration files using the var function
+    #ex:
+    atribute = var.<your_variable_name>
+3. Variables can have different types like string, boolean, number, list...ect
+    
+
+Types of variables:
+-------------------
+There are two main types simple values and collection variables
+
+simple values : These are the variables which holds only single values
+1. string --------ex: "t2.micro"
+2. number---------ex: 2
+3. boolean--------ex: true/false
+   
+Collection variables: These are the variables which holds more than one value
+
+1. list ----------ex: ["user1","user2","user3"]
+2. set 
+3. map
+
+map and set are key, value pair of strings
+  
 *.tfvars: This file is also used for the defining and declaring variable but can be used for the multiple environments like dev,stage,prod..etc
 
 **Having a seperate *.tfvars for all re-usable variables provides clarity, readability and maintainability of code 
