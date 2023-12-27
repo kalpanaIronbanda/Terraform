@@ -150,3 +150,20 @@ terraform state lock is the better practice for broad teams.
 depends_on meta-arguement:
 --------------------------
 depends_on metatag-arguement is used to define explicit dependency between the resources.It is used to specify that perticular resource depends on another resource and the depent resource should be created or modified before the resource that depends on it.
+
+
+LifeCycle Rules:
+----------------
+syntax:
+   resource "type" "name" {
+     key1 = "value1"
+     key2 = "value2"
+     lifecyle {
+       rule = true/false
+     }  
+   }
+rules are below:
+when we modify the existing resource, terraform will delete the existing one and then creates new one with modifications.
+1. create_before_destroy ----- if we want to modify the resource before destroying it, then set it as true
+2. prevent_destroy ----- if we don't want to destroy the existing resource at all and just want to modify it, then set it as true
+3. ignore_changes ---- it accepts list of arguements to ignore the changes made to that arguements manually or with any other tool for subsequent applies
