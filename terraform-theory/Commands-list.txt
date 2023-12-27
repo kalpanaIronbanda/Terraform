@@ -1,7 +1,18 @@
-terraform init
-terraform plan
-terraform apply
-terraform destroy
+terraform init ---- downloads the provider plugins
+terraform plan ---- gives the overview about changes in configuration
+terraform apply ---- creates the resources
+terraform destroy --- deletes the resources
+terraform validate ---- checks the syntax of the configuration files
+terraform fmt or terraform format --- formats the configuration files
+terraform refresh ---- updates the terraform.tfstate file
+terraform show ---- prints the output which is created by configuration files
+
+terraform providers --- lists the all providers used in the configuration 
+        terraform providers mirror <path/to/new/dir> ---- copies the providers from pwd to specified path
+terraform output ---- prints the output from output.tf files to the terminal
+        terraform output <variable> ---- prints the value of specific variable
+
+
 
 How do you pass a variable(.tfvars) to the command line?
         terraform init --var-file=<*.tfvars>
