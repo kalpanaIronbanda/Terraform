@@ -49,5 +49,15 @@ Terraform refresh command doesn't do any changes or modifications to the configu
                 terrform refresh
 
 
+terraform state commands:
+terraform state list --- list the all resources recorded in the tfstate file
+        terraform state list [resource_type.resource_name] --- matches the specified resource if present in the tfstate file
+terraform state show --- prints all the attributes of the all resources
+        terraform show [resource_type.resource_name] ---- prints the all attributes of the specified resource
+terraform state pull --- it will download and display the content of the remote state file
+terraform state rm [resource_type.resource_name]---- it will delete the items from the tfstate file
+
+
+
 
 
