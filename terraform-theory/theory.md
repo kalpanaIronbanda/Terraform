@@ -155,6 +155,7 @@ depends_on metatag-arguement is used to define explicit dependency between the r
 LifeCycle Rules:
 ----------------
 syntax:
+
    resource "type" "name" {
      key1 = "value1"
      key2 = "value2"
@@ -162,6 +163,7 @@ syntax:
        rule = true/false
      }  
    }
+   
 rules are below:
 when we modify the existing resource, terraform will delete the existing one and then creates new one with modifications.
 1. create_before_destroy ----- if we want to modify the resource before destroying it, then set it as true
