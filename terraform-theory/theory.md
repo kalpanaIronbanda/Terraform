@@ -156,19 +156,19 @@ LifeCycle Rules:
 ----------------
 syntax:
 
-   resource "type" "name" {
+    resource "type" "name" {
    
-     key1 = "value1"
+      key1 = "value1"
      
-     key2 = "value2"
+      key2 = "value2"
      
-     lifecyle {
+      lifecyle {
      
-       rule = true/false
+        rule = true/false
        
-     }  
+      }  
      
-   }
+    }
    
 rules are below:
 
